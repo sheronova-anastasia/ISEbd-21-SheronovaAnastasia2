@@ -81,7 +81,7 @@ namespace IcecreamShopListImplement.Implements
                     if
                     (model.IcecreamAdditives.ContainsKey(source.IcecreamAdditives[i].AdditiveId))
                     {
-                        source.IcecreamAdditives[i].Amount =
+                        source.IcecreamAdditives[i].Count =
                         model.IcecreamAdditives[source.IcecreamAdditives[i].AdditiveId].Item2;
                         model.IcecreamAdditives.Remove(source.IcecreamAdditives[i].IcecreamId);
                     }
@@ -98,7 +98,7 @@ namespace IcecreamShopListImplement.Implements
                     Id = ++maxPCId,
                     IcecreamId = icecream.Id,
                     AdditiveId = ia.Key,
-                    Amount = ia.Value.Item2
+                    Count = ia.Value.Item2
                 });
             }
             return icecream;
@@ -137,7 +137,7 @@ namespace IcecreamShopListImplement.Implements
                             break;
                         }
                     }
-                    icecreamAdditives.Add(ia.AdditiveId, (additiveName, ia.Amount));
+                    icecreamAdditives.Add(ia.AdditiveId, (additiveName, ia.Count));
                 }
             }
             return new IcecreamViewModel

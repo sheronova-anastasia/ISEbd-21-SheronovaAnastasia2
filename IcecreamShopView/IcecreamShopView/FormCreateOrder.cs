@@ -45,7 +45,7 @@ namespace IcecreamShopView
         private void CalcSum()
         {
             if (comboBoxIcecream.SelectedValue != null &&
-           !string.IsNullOrEmpty(textBoxAmount.Text))
+           !string.IsNullOrEmpty(textBoxCount.Text))
             {
                 try
                 {
@@ -54,7 +54,7 @@ namespace IcecreamShopView
                     {
                         Id = id
                     })?[0];
-                    int count = Convert.ToInt32(textBoxAmount.Text);
+                    int count = Convert.ToInt32(textBoxCount.Text);
                     textBoxSum.Text = (count * product?.Price ?? 0).ToString();
                 }
                 catch (Exception ex)
@@ -74,7 +74,7 @@ namespace IcecreamShopView
         }
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxAmount.Text))
+            if (string.IsNullOrEmpty(textBoxCount.Text))
             {
                 MessageBox.Show("Заполните поле Количество", "Ошибка",
                MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -91,7 +91,7 @@ namespace IcecreamShopView
                 logicM.CreateOrder(new CreateOrderBindingModel
                 {
                     IcecreamId = Convert.ToInt32(comboBoxIcecream.SelectedValue),
-                    Amount = Convert.ToInt32(textBoxAmount.Text),
+                    Count = Convert.ToInt32(textBoxCount.Text),
                     Sum = Convert.ToDecimal(textBoxSum.Text)
                 });
                 MessageBox.Show("Сохранение прошло успешно", "Сообщение",

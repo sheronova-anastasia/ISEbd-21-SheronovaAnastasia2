@@ -79,7 +79,7 @@ namespace IcecreamShopListImplement.Implements
         private Order CreateModel(OrderBindingModel model, Order Order)
         {
             Order.IcecreamId = model.IcecreamId == 0 ? Order.IcecreamId : model.IcecreamId;
-            Order.Amount = model.Amount;
+            Order.Count = model.Count;
             Order.Sum = model.Sum;
             Order.Status = model.Status;
             Order.DateCreate = model.DateCreate;
@@ -101,7 +101,7 @@ namespace IcecreamShopListImplement.Implements
             {
                 Id = Order.Id,
                 IcecreamName = IcecreamName,
-                Amount = Order.Amount,
+                Count = Order.Count,
                 Sum = Order.Sum,
                 Status = Order.Status,
                 DateCreate = Order.DateCreate,

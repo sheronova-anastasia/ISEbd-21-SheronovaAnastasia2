@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.labelIcecream = new System.Windows.Forms.Label();
-            this.labelAmount = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
             this.labelSum = new System.Windows.Forms.Label();
             this.comboBoxIcecream = new System.Windows.Forms.ComboBox();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.textBoxCount = new System.Windows.Forms.TextBox();
             this.textBoxSum = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -47,14 +47,14 @@
             this.labelIcecream.TabIndex = 0;
             this.labelIcecream.Text = "Мороженое:";
             // 
-            // labelAmount
+            // labelCount
             // 
-            this.labelAmount.AutoSize = true;
-            this.labelAmount.Location = new System.Drawing.Point(12, 47);
-            this.labelAmount.Name = "labelAmount";
-            this.labelAmount.Size = new System.Drawing.Size(69, 13);
-            this.labelAmount.TabIndex = 1;
-            this.labelAmount.Text = "Количество:";
+            this.labelCount.AutoSize = true;
+            this.labelCount.Location = new System.Drawing.Point(12, 47);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(69, 13);
+            this.labelCount.TabIndex = 1;
+            this.labelCount.Text = "Количество:";
             // 
             // labelSum
             // 
@@ -74,12 +74,12 @@
             this.comboBoxIcecream.TabIndex = 3;
             this.comboBoxIcecream.SelectedIndexChanged += new System.EventHandler(this.ComboBoxIcecream_SelectedIndexChanged);
             // 
-            // textBoxAmount
+            // textBoxCount
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(97, 44);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(220, 20);
-            this.textBoxAmount.TabIndex = 4;
+            this.textBoxCount.Location = new System.Drawing.Point(97, 44);
+            this.textBoxCount.Name = "textBoxCount";
+            this.textBoxCount.Size = new System.Drawing.Size(220, 20);
+            this.textBoxCount.TabIndex = 4;
             // 
             // textBoxSum
             // 
@@ -117,10 +117,10 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxSum);
-            this.Controls.Add(this.textBoxAmount);
+            this.Controls.Add(this.textBoxCount);
             this.Controls.Add(this.comboBoxIcecream);
             this.Controls.Add(this.labelSum);
-            this.Controls.Add(this.labelAmount);
+            this.Controls.Add(this.labelCount);
             this.Controls.Add(this.labelIcecream);
             this.Name = "FormCreateOrder";
             this.Text = "Заказ";
@@ -133,10 +133,10 @@
         #endregion
 
         private System.Windows.Forms.Label labelIcecream;
-        private System.Windows.Forms.Label labelAmount;
+        private System.Windows.Forms.Label labelCount;
         private System.Windows.Forms.Label labelSum;
         private System.Windows.Forms.ComboBox comboBoxIcecream;
-        private System.Windows.Forms.TextBox textBoxAmount;
+        private System.Windows.Forms.TextBox textBoxCount;
         private System.Windows.Forms.TextBox textBoxSum;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;

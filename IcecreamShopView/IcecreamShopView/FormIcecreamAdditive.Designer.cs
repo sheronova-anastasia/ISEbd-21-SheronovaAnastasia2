@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.labelAdditive = new System.Windows.Forms.Label();
-            this.labelAmount = new System.Windows.Forms.Label();
-            this.textBoxAmount = new System.Windows.Forms.TextBox();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.textBoxCount = new System.Windows.Forms.TextBox();
             this.comboBoxAdditive = new System.Windows.Forms.ComboBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -45,21 +45,21 @@
             this.labelAdditive.TabIndex = 0;
             this.labelAdditive.Text = "Добавка:";
             // 
-            // labelAmount
+            // labelCount
             // 
-            this.labelAmount.AutoSize = true;
-            this.labelAmount.Location = new System.Drawing.Point(24, 54);
-            this.labelAmount.Name = "labelAmount";
-            this.labelAmount.Size = new System.Drawing.Size(69, 13);
-            this.labelAmount.TabIndex = 1;
-            this.labelAmount.Text = "Количество:";
+            this.labelCount.AutoSize = true;
+            this.labelCount.Location = new System.Drawing.Point(24, 54);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(69, 13);
+            this.labelCount.TabIndex = 1;
+            this.labelCount.Text = "Количество:";
             // 
-            // textBoxAmount
+            // textBoxCount
             // 
-            this.textBoxAmount.Location = new System.Drawing.Point(99, 51);
-            this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(204, 20);
-            this.textBoxAmount.TabIndex = 3;
+            this.textBoxCount.Location = new System.Drawing.Point(99, 51);
+            this.textBoxCount.Name = "textBoxCount";
+            this.textBoxCount.Size = new System.Drawing.Size(204, 20);
+            this.textBoxCount.TabIndex = 3;
             // 
             // comboBoxAdditive
             // 
@@ -98,8 +98,8 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.comboBoxAdditive);
-            this.Controls.Add(this.textBoxAmount);
-            this.Controls.Add(this.labelAmount);
+            this.Controls.Add(this.textBoxCount);
+            this.Controls.Add(this.labelCount);
             this.Controls.Add(this.labelAdditive);
             this.Name = "FormIcecreamAdditive";
             this.Text = "Добавка мороженого";
@@ -111,8 +111,8 @@
         #endregion
 
         private System.Windows.Forms.Label labelAdditive;
-        private System.Windows.Forms.Label labelAmount;
-        private System.Windows.Forms.TextBox textBoxAmount;
+        private System.Windows.Forms.Label labelCount;
+        private System.Windows.Forms.TextBox textBoxCount;
         private System.Windows.Forms.ComboBox comboBoxAdditive;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;

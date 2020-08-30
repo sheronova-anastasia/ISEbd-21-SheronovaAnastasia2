@@ -13,7 +13,7 @@ namespace IcecreamShopBusinessLogic.ViewModels
         [DisplayName("Мороженое")]
         public string IcecreamName { get; set; }
         [DisplayName("Количество")]
-        public int Amount { get; set; }
+        public int Count { get; set; }
         [DisplayName("Сумма")]
         public decimal Sum { get; set; }
         [DisplayName("Статус")]

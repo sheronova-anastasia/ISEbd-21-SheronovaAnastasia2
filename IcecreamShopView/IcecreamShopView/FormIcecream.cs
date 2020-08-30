@@ -84,11 +84,11 @@ namespace IcecreamShopView
             {
                 if (icecreamAdditives.ContainsKey(form.Id))
                 {
-                    icecreamAdditives[form.Id] = (form.AdditiveName, form.Amount);
+                    icecreamAdditives[form.Id] = (form.AdditiveName, form.Count);
                 }
                 else
                 {
-                    icecreamAdditives.Add(form.Id, (form.AdditiveName, form.Amount));
+                    icecreamAdditives.Add(form.Id, (form.AdditiveName, form.Count));
                 }
                 LoadData();
             }
@@ -100,10 +100,10 @@ namespace IcecreamShopView
                 var form = Container.Resolve<FormIcecreamAdditive>();
                 int id = Convert.ToInt32(dataGridViewAdditives.SelectedRows[0].Cells[0].Value);
                 form.Id = id;
-                form.Amount = icecreamAdditives[id].Item2;
+                form.Count = icecreamAdditives[id].Item2;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    icecreamAdditives[form.Id] = (form.AdditiveName, form.Amount);
+                    icecreamAdditives[form.Id] = (form.AdditiveName, form.Count);
                     LoadData();
                 }
             }

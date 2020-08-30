@@ -23,12 +23,12 @@ namespace IcecreamShopView
             set { comboBoxAdditive.SelectedValue = value; }
         }
         public string AdditiveName { get { return comboBoxAdditive.Text; } }
-        public int Amount
+        public int Count
         {
-            get { return Convert.ToInt32(textBoxAmount.Text); }
+            get { return Convert.ToInt32(textBoxCount.Text); }
             set
             {
-                textBoxAmount.Text = value.ToString();
+                textBoxCount.Text = value.ToString();
             }
         }
         public FormIcecreamAdditive(IAdditiveLogic logic)
@@ -45,7 +45,7 @@ namespace IcecreamShopView
         }
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxAmount.Text))
+            if (string.IsNullOrEmpty(textBoxCount.Text))
             {
                 MessageBox.Show("Заполните поле Количество", "Ошибка",
                MessageBoxButtons.OK, MessageBoxIcon.Error);

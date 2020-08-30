@@ -35,7 +35,7 @@
             this.groupBoxAdditives = new System.Windows.Forms.GroupBox();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Additive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
@@ -140,7 +140,7 @@
             this.dataGridViewAdditives.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.Additive,
-            this.Amount});
+            this.Count});
             this.dataGridViewAdditives.Location = new System.Drawing.Point(6, 19);
             this.dataGridViewAdditives.Name = "dataGridViewAdditives";
             this.dataGridViewAdditives.Size = new System.Drawing.Size(409, 306);
@@ -158,10 +158,10 @@
             this.Additive.HeaderText = "Добавка";
             this.Additive.Name = "Additive";
             // 
-            // Amount
+            // Count
             // 
-            this.Amount.HeaderText = "Количество";
-            this.Amount.Name = "Amount";
+            this.Count.HeaderText = "Количество";
+            this.Count.Name = "Count";
             // 
             // buttonSave
             // 
@@ -221,6 +221,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Additive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Count;
     }
 }

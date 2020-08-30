@@ -9,6 +9,6 @@ namespace IcecreamShopListImplement.Models
         public int Id { get; set; }
         public int IcecreamId { get; set; }
         public int AdditiveId { get; set; }
-        public int Amount { get; set; }
+        public int Count { get; set; }
     }
 }
