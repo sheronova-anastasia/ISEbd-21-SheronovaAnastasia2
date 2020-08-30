@@ -56,7 +56,7 @@ namespace IcecreamShopView
         }
         private void МороженоеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = Container.Resolve<FormIcecream>();
+            var form = Container.Resolve<FormIcecreams>();
             form.ShowDialog();
         }
         private void ButtonCreateOrder_Click(object sender, EventArgs e)

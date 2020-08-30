@@ -95,15 +95,13 @@
             this.Controls.Add(this.buttonIcecreamsAdd);
             this.Controls.Add(this.dataGridViewIcecreams);
             this.Name = "FormIcecreams";
-            this.Text = "FormIcecreams";
+            this.Text = "Мороженое";
             this.Load += new System.EventHandler(this.FormIcecreams_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIcecreams)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
-
         private System.Windows.Forms.DataGridView dataGridViewIcecreams;
         private System.Windows.Forms.Button buttonIcecreamsAdd;
         private System.Windows.Forms.Button buttonIcecreamsChange;

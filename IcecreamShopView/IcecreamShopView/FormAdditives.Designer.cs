@@ -97,6 +97,7 @@
             this.Controls.Add(this.dataGridViewAdditives);
             this.Name = "FormAdditives";
             this.Text = "Добавки";
+            this.Load += new System.EventHandler(this.FormAdditives_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdditives)).EndInit();
             this.ResumeLayout(false);
 
