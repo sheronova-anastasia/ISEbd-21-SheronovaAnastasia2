@@ -55,6 +55,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormIcecreams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIcecreams.Designer.cs">
+      <DependentUpon>FormIcecreams.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdditive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,12 +90,6 @@
     </Compile>
     <Compile Include="FormIcecreamAdditive.Designer.cs">
       <DependentUpon>FormIcecreamAdditive.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormIcecreams.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormIcecreams.Designer.cs">
-      <DependentUpon>FormIcecreams.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
