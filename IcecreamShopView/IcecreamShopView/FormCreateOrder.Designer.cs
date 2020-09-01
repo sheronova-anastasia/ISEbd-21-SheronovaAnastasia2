@@ -80,6 +80,7 @@
             this.textBoxCount.Name = "textBoxCount";
             this.textBoxCount.Size = new System.Drawing.Size(220, 20);
             this.textBoxCount.TabIndex = 4;
+            this.textBoxCount.TextChanged += new System.EventHandler(this.TextBoxCount_TextChanged);
             // 
             // textBoxSum
             // 
