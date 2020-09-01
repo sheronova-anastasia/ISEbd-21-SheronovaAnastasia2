@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecreamShopBusinessLogic",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecreamShopListImplement", "IcecreamShopListImplement\IcecreamShopListImplement.csproj", "{9A3573D2-7FEC-44A6-A6DD-952EF37CF350}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcecreamShopFileImplement", "IcecreamShopFileImplement\IcecreamShopFileImplement.csproj", "{0B42DD3D-EC55-4140-A30A-E2FC0D38AD65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IcecreamShopFileImplement", "IcecreamShopFileImplement\IcecreamShopFileImplement.csproj", "{0B42DD3D-EC55-4140-A30A-E2FC0D38AD65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcecreamShopDatabaseImplement", "IcecreamShopDatabaseImplement\IcecreamShopDatabaseImplement.csproj", "{027E7132-DC58-4E9C-A318-5FC0A7CB537A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0B42DD3D-EC55-4140-A30A-E2FC0D38AD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B42DD3D-EC55-4140-A30A-E2FC0D38AD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B42DD3D-EC55-4140-A30A-E2FC0D38AD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{027E7132-DC58-4E9C-A318-5FC0A7CB537A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{027E7132-DC58-4E9C-A318-5FC0A7CB537A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{027E7132-DC58-4E9C-A318-5FC0A7CB537A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{027E7132-DC58-4E9C-A318-5FC0A7CB537A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
