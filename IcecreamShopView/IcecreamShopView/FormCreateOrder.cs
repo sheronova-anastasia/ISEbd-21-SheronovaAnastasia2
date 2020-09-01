@@ -19,19 +19,19 @@ namespace IcecreamShopView
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        private readonly IIcecreamLogic logicI;
+        private readonly IIcecreamLogic logicP;
         private readonly MainLogic logicM;
         public FormCreateOrder(IIcecreamLogic logicP, MainLogic logicM)
         {
             InitializeComponent();
-            this.logicI = logicP;
+            this.logicP = logicP;
             this.logicM = logicM;
         }
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
             try
             {
-                var list = logicI.Read(null);
+                var list = logicP.Read(null);
                 comboBoxIcecream.DataSource = list;
                 comboBoxIcecream.DisplayMember = "IcecreamName";
                 comboBoxIcecream.ValueMember = "Id";
@@ -50,12 +50,12 @@ namespace IcecreamShopView
                 try
                 {
                     int id = Convert.ToInt32(comboBoxIcecream.SelectedValue);
-                    IcecreamViewModel product = logicI.Read(new IcecreamBindingModel
+                    IcecreamViewModel icecream = logicP.Read(new IcecreamBindingModel
                     {
                         Id = id
                     })?[0];
                     int count = Convert.ToInt32(textBoxCount.Text);
-                    textBoxSum.Text = (count * product?.Price ?? 0).ToString();
+                    textBoxSum.Text = (count * icecream?.Price ?? 0).ToString();
                 }
                 catch (Exception ex)
                 {
