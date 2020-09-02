@@ -128,7 +128,7 @@ namespace IcecreamShopDatabaseImplement.Implements
                    IcecreamAdditives = context.IcecreamAdditives
                 .Include(recPC => recPC.Additive)
                .Where(recPC => recPC.IcecreamId == rec.Id)
-               .ToDictionary(recPC => recPC.AdditiveId, recPC =>
+               .ToDictionary(recPC => recPC.IcecreamId, recPC =>
                 (recPC.Additive?.AdditiveName, recPC.Count))
                })
                .ToList();

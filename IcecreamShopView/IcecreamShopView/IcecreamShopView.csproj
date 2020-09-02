@@ -299,6 +299,7 @@
     <None Include="Properties\DataSources\IcecreamShopBusinessLogic.ViewModels.AdditiveViewModel.datasource" />
     <None Include="Properties\DataSources\IcecreamShopBusinessLogic.ViewModels.IcecreamViewModel.datasource" />
     <None Include="Properties\DataSources\IcecreamShopBusinessLogic.ViewModels.OrderViewModel.datasource" />
+    <None Include="Properties\DataSources\IcecreamShopBusinessLogic.ViewModels.ReportOrdersViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
