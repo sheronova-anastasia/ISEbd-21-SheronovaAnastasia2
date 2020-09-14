@@ -11,7 +11,7 @@ namespace IcecreamShopBusinessLogic.BusinessLogics
 {
     public class ReportLogic
     {
-        private readonly IAdditiveLogic AdditiveLogic;  
+        private readonly IAdditiveLogic AdditiveLogic;
         private readonly IIcecreamLogic IcecreamLogic;
         private readonly IOrderLogic orderLogic;
         public ReportLogic(IIcecreamLogic IcecreamLogic, IAdditiveLogic AdditiveLogic,
@@ -67,7 +67,7 @@ namespace IcecreamShopBusinessLogic.BusinessLogics
             SaveToWord.CreateDoc(new WordInfo
             {
                 FileName = model.FileName,
-                Title = "Список мороженых   ",
+                Title = "Список мороженых",
                 Icecreams = IcecreamLogic.Read(null)
             });
         }
