@@ -144,7 +144,7 @@ namespace IcecreamShopView
             var form = Container.Resolve<FormReportOrders>();
             form.ShowDialog();
         }
-        private void мороженоеПоДобавкамToolStripMenuItem_Click(object sender, EventArgs e)
+        private void добавкиПоМороженомуToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<FormReportIcecreamAdditives>();
             form.ShowDialog();

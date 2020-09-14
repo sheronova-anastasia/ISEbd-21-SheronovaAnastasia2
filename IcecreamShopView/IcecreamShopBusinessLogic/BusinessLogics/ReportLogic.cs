@@ -11,7 +11,7 @@ namespace IcecreamShopBusinessLogic.BusinessLogics
 {
     public class ReportLogic
     {
-        private readonly IAdditiveLogic AdditiveLogic;
+        private readonly IAdditiveLogic AdditiveLogic;  
         private readonly IIcecreamLogic IcecreamLogic;
         private readonly IOrderLogic orderLogic;
         public ReportLogic(IIcecreamLogic IcecreamLogic, IAdditiveLogic AdditiveLogic,
@@ -22,7 +22,7 @@ namespace IcecreamShopBusinessLogic.BusinessLogics
             this.orderLogic = orderLogic;
         }
         /// <summary>
-        /// Получение списка компонент с указанием, в каких изделиях используются
+        /// Получение списка добавок с указанием, в каких мороженых используются
         /// </summary>
         /// <returns></returns>
         public List<ReportIcecreamAdditiveViewModel> GetIcecreamAdditive()
@@ -67,7 +67,7 @@ namespace IcecreamShopBusinessLogic.BusinessLogics
             SaveToWord.CreateDoc(new WordInfo
             {
                 FileName = model.FileName,
-                Title = "Список добавок",
+                Title = "Список мороженых   ",
                 Icecreams = IcecreamLogic.Read(null)
             });
         }

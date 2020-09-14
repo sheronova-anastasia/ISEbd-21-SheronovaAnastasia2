@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.buttonMake = new System.Windows.Forms.Button();
             this.buttonToPdf = new System.Windows.Forms.Button();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -41,7 +40,7 @@
             // 
             this.buttonMake.Location = new System.Drawing.Point(251, 15);
             this.buttonMake.Name = "buttonMake";
-            this.buttonMake.Size = new System.Drawing.Size(85, 31);
+            this.buttonMake.Size = new System.Drawing.Size(105, 31);
             this.buttonMake.TabIndex = 0;
             this.buttonMake.Text = "Сформировать";
             this.buttonMake.UseVisualStyleBackColor = true;
@@ -80,7 +79,7 @@
             this.Controls.Add(this.buttonToPdf);
             this.Controls.Add(this.buttonMake);
             this.Name = "FormReportIcecreamAdditives";
-            this.Text = "Отчет по добавкам и мороженому";
+            this.Text = "Отчет по мороженым и добавкам";
             ((System.ComponentModel.ISupportInitialize)(this.ReportIcecreamAdditiveViewModelBindingSource)).EndInit();
             this.ResumeLayout(false);
 

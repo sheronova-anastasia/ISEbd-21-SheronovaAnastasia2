@@ -34,7 +34,7 @@
             this.мороженоеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокЗаказовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.мороженоеПоДобавкамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавкиПоМороженомуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокДобавокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
             this.buttonCreateOrder = new System.Windows.Forms.Button();
@@ -148,7 +148,7 @@
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.списокЗаказовToolStripMenuItem,
-            this.мороженоеПоДобавкамToolStripMenuItem,
+            this.добавкиПоМороженомуToolStripMenuItem,
             this.списокДобавокToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
@@ -161,12 +161,12 @@
             this.списокЗаказовToolStripMenuItem.Text = "Список заказов";
             this.списокЗаказовToolStripMenuItem.Click += new System.EventHandler(this.списокЗаказовToolStripMenuItem_Click);
             // 
-            // мороженоеПоДобавкамToolStripMenuItem
+            // добавкиПоМороженомуToolStripMenuItem
             // 
-            this.мороженоеПоДобавкамToolStripMenuItem.Name = "мороженоеПоДобавкамToolStripMenuItem";
-            this.мороженоеПоДобавкамToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.мороженоеПоДобавкамToolStripMenuItem.Text = "Мороженое по добавкам";
-            this.мороженоеПоДобавкамToolStripMenuItem.Click += new System.EventHandler(this.мороженоеПоДобавкамToolStripMenuItem_Click);
+            this.добавкиПоМороженомуToolStripMenuItem.Name = "добавкиПоМороженомуToolStripMenuItem";
+            this.добавкиПоМороженомуToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавкиПоМороженомуToolStripMenuItem.Text = "Добавки по мороженому";
+            this.добавкиПоМороженомуToolStripMenuItem.Click += new System.EventHandler(this.добавкиПоМороженомуToolStripMenuItem_Click);
             // 
             // списокДобавокToolStripMenuItem
             // 
@@ -213,7 +213,7 @@
         private System.Windows.Forms.Button buttonUpdateList;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокЗаказовToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem мороженоеПоДобавкамToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавкиПоМороженомуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокДобавокToolStripMenuItem;
     }
 }
