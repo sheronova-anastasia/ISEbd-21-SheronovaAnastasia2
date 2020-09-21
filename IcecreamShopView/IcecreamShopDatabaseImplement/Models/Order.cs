@@ -9,6 +9,7 @@ namespace IcecreamShopDatabaseImplement.Models
     public class Order
     {
         public int Id { get; set; }
+        public int ClientId { get; set; }
         public int IcecreamId { get; set; }
         [Required]
         public int Count { get; set; }
@@ -20,5 +21,6 @@ namespace IcecreamShopDatabaseImplement.Models
         public DateTime DateCreate { get; set; }
         public DateTime? DateImplement { get; set; }
         public virtual Icecream Icecream { get; set; }
+        public Client Client { get; set; }
     }
 }
