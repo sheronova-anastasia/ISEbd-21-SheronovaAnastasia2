@@ -12,12 +12,14 @@ namespace IcecreamShopListImplement
         public List<Order> Orders { get; set; }
         public List<Icecream> Icecreams { get; set; }
         public List<IcecreamAdditive> IcecreamAdditives { get; set; }
+        public List<Client> Clients { get; set; }
         private DataListSingleton()
         {
             Additives = new List<Additive>();
             Orders = new List<Order>();
             Icecreams = new List<Icecream>();
             IcecreamAdditives = new List<IcecreamAdditive>();
+            Clients = new List<Client>();
         }
 
         public static DataListSingleton GetInstance()

@@ -35,6 +35,7 @@ namespace IcecreamShopFileImplement.Implements
                 source.Orders.Add(element);
             }
             element.IcecreamId = model.IcecreamId == 0 ? element.IcecreamId : model.IcecreamId;
+            element.ClientId = model.ClientId == null ? element.ClientId : (int)model.ClientId;
             element.Count = model.Count;
             element.Sum = model.Sum;
             element.Status = model.Status;
@@ -62,6 +63,8 @@ namespace IcecreamShopFileImplement.Implements
             {
                 Id = rec.Id,
                 IcecreamName = source.Icecreams.FirstOrDefault(x => x.Id == rec.IcecreamId)?.IcecreamName,
+                ClientId = rec.ClientId,
+                ClientFIO = source.Clients.FirstOrDefault(recC => recC.Id == rec.ClientId)?.ClientFIO,
                 Count = rec.Count,
                 Sum = rec.Sum,
                 Status = rec.Status,

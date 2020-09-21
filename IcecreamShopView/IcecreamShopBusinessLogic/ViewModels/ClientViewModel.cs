@@ -7,17 +7,18 @@ using System.Text;
 namespace IcecreamShopBusinessLogic.ViewModels
 {
     [DataContract]
-    public class IcecreamViewModel
+    public class ClientViewModel
     {
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        [DisplayName("Название мороженого")]
-        public string IcecreamName { get; set; }
+        [DisplayName("ФИО")]
+        public string ClientFIO { get; set; }
         [DataMember]
-        [DisplayName("Цена")]
-        public decimal Price { get; set; }
+        [DisplayName("Логин")]
+        public string Email { get; set; }
         [DataMember]
-        public Dictionary<int, (string, int)> IcecreamAdditives { get; set; }
+        [DisplayName("Пароль")]
+        public string Password { get; set; }
     }
 }

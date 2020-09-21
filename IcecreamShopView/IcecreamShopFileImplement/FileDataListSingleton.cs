@@ -16,16 +16,19 @@ namespace IcecreamShopFileImplement
         private readonly string OrderFileName = "C:\\Users\\Настя\\Document\\IcecreamShop\\Order.xml";
         private readonly string IcecreamFileName = "C:\\Users\\Настя\\Document\\IcecreamShop\\Icecream.xml";
         private readonly string IcecreamAdditiveFileName = "C:\\Users\\Настя\\Document\\IcecreamShop\\IcecreamAdditive.xml";
+        private readonly string ClientFileName = "C:\\Users\\Настя\\Document\\IcecreamShop\\Client.xml";
         public List<Additive> Additives { get; set; }
         public List<Order> Orders { get; set; }
         public List<Icecream> Icecreams { get; set; }
         public List<IcecreamAdditive> IcecreamAdditives { get; set; }
+        public List<Client> Clients { get; set; }
         private FileDataListSingleton()
         {
             Additives = LoadAdditives();
             Orders = LoadOrders();
             Icecreams = LoadIcecreams();
             IcecreamAdditives = LoadIcecreamAdditives();
+            Clients = LoadClients();
         }
         public static FileDataListSingleton GetInstance()
         {
@@ -126,6 +129,26 @@ namespace IcecreamShopFileImplement
             }
             return list;
         }
+        private List<Client> LoadClients()
+        {
+            var list = new List<Client>();
+            if (File.Exists(ClientFileName))
+            {
+                XDocument xDocument = XDocument.Load(ClientFileName);
+                var xElements = xDocument.Root.Elements("Client").ToList();
+                foreach (var elem in xElements)
+                {
+                    list.Add(new Client
+                    {
+                        Id = Convert.ToInt32(elem.Attribute("Id").Value),
+                        ClientFIO = elem.Element("ClientFIO").Value,
+                        Email = elem.Element("Email").Value,
+                        Password = elem.Element("Password").Value
+                    });
+                }
+            }
+            return list;
+        }
         private void SaveAdditives()
         {
             if (Additives != null)
@@ -192,6 +215,23 @@ namespace IcecreamShopFileImplement
                 }
                 XDocument xDocument = new XDocument(xElement);
                 xDocument.Save(IcecreamAdditiveFileName);
+            }
+        }
+        private void SaveClients()
+        {
+            if (Clients != null)
+            {
+                var xElement = new XElement("Clients");
+                foreach (var client in Clients)
+                {
+                    xElement.Add(new XElement("Client",
+                    new XAttribute("Id", client.Id),
+                    new XElement("ClientFIO", client.ClientFIO),
+                    new XElement("Email", client.Email),
+                    new XElement("Password", client.Password)));
+                }
+                XDocument xDocument = new XDocument(xElement);
+                xDocument.Save(ClientFileName);
             }
         }
     }
