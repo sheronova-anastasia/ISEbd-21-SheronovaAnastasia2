@@ -5,6 +5,7 @@ using IcecreamShopListImplement.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using IcecreamShopBusinessLogic.Enums;
 
 namespace IcecreamShopListImplement.Implements
 {
@@ -66,7 +67,9 @@ namespace IcecreamShopListImplement.Implements
                 if (model != null)
                 {
                     if (order.Id == model.Id || (model.DateFrom.HasValue && model.DateTo.HasValue && order.DateCreate >= model.DateFrom && order.DateCreate <= model.DateTo)
-                        || model.ClientId.HasValue && order.ClientId == model.ClientId)
+                        || model.ClientId.HasValue && order.ClientId == model.ClientId
+                        || model.FreeOrders.HasValue && model.FreeOrders.Value
+                        || model.ImplementerId.HasValue && order.ImplementerId == model.ImplementerId && order.Status == OrderStatus.Выполняется)
                     {
                         result.Add(CreateViewModel(order));
                         break;
@@ -82,6 +85,7 @@ namespace IcecreamShopListImplement.Implements
             order.IcecreamId = model.IcecreamId == 0 ? order.IcecreamId : model.IcecreamId;
             order.Count = model.Count;
             order.Sum = model.Sum;
+            order.ImplementerId = model.ImplementerId;
             order.Status = model.Status;
             order.DateCreate = model.DateCreate;
             order.DateImplement = model.DateImplement;
@@ -103,6 +107,7 @@ namespace IcecreamShopListImplement.Implements
                 Id = order.Id,
                 IcecreamName = IcecreamName,
                 ClientId = order.ClientId,
+                ImplementerId = order.ImplementerId,
                 Count = order.Count,
                 Sum = order.Sum,
                 Status = order.Status,

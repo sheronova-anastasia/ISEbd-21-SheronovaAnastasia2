@@ -7,6 +7,7 @@ using IcecreamShopBusinessLogic.BindingModels;
 using IcecreamShopBusinessLogic.Interfaces;
 using IcecreamShopBusinessLogic.ViewModels;
 using IcecreamShopDatabaseImplement.Models;
+using IcecreamShopBusinessLogic.Enums;
 
 namespace IcecreamShopDatabaseImplement.Implements
 {
@@ -32,7 +33,8 @@ namespace IcecreamShopDatabaseImplement.Implements
                     context.Orders.Add(element);
                 }
                 element.IcecreamId = model.IcecreamId == 0 ? element.IcecreamId : model.IcecreamId;
-                element.ClientId = model.ClientId == null ? element.ClientId : (int)model.ClientId;
+                element.ClientId = model.ClientId.Value;
+                element.ImplementerId = model.ImplementerId;
                 element.Count = model.Count;
                 element.Sum = model.Sum;
                 element.Status = model.Status;
@@ -62,25 +64,31 @@ namespace IcecreamShopDatabaseImplement.Implements
         {
             using (var context = new IcecreamShopDatabase())
             {
-                return context.Orders.Where(rec => model == null || (rec.Id == model.Id && model.Id.HasValue)
-                 || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo) ||
-
-                 (model.ClientId.HasValue && rec.ClientId == model.ClientId))
-                    .Include(rec => rec.Icecream)
-                .Include(rec => rec.Client)
+                return context.Orders
+              .Where(
+                  rec => model == null
+                  || rec.Id == model.Id && model.Id.HasValue
+                  || model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo
+                  || model.ClientId.HasValue && rec.ClientId == model.ClientId
+                  || model.FreeOrders.HasValue && model.FreeOrders.Value && !rec.ImplementerId.HasValue
+                  || model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется
+              )
                   .Select(rec => new OrderViewModel
                   {
-                Id = rec.Id,
-                IcecreamName = rec.Icecream.IcecreamName,
-                ClientId = rec.ClientId,
-                ClientFIO = rec.Client.ClientFIO,
-                Count = rec.Count,
-                Sum = rec.Sum,
-                Status = rec.Status,
-                DateCreate = rec.DateCreate,
-                DateImplement = rec.DateImplement
-            })
-            .ToList();
+                      Id = rec.Id,
+                      ClientId = rec.ClientId,
+                      ImplementerId = rec.ImplementerId,
+                      IcecreamId = rec.IcecreamId,
+                      Count = rec.Count,
+                      Sum = rec.Sum,
+                      Status = rec.Status,
+                      DateCreate = rec.DateCreate,
+                      DateImplement = rec.DateImplement,
+                      ClientFIO = rec.Client.ClientFIO,
+                      ImplementerFIO = rec.ImplementerId.HasValue ? rec.Implementer.ImplementerFIO : string.Empty,
+                      IcecreamName = rec.Icecream.IcecreamName,
+                  })
+              .ToList();
             }
         }
     }

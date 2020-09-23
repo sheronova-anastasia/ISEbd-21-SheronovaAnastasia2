@@ -15,11 +15,14 @@ namespace IcecreamShopBusinessLogic.ViewModels
         [DataMember]
         public int ClientId { get; set; }
         [DataMember]
-        [DisplayName("ID")]
+        public int? ImplementerId { get; set; }
         public int IcecreamId { get; set; }
         [DataMember]
         [DisplayName("Клиент")]
         public string ClientFIO { get; set; }
+        [DataMember]
+        [DisplayName("Исполнитель")]
+        public string ImplementerFIO { get; set; }
         [DataMember]
         [DisplayName("Мороженое")]
         public string IcecreamName { get; set; }
@@ -36,7 +39,7 @@ namespace IcecreamShopBusinessLogic.ViewModels
         [DataMember]
         public DateTime DateCreate { get; set; }
         [DisplayName("Дата выполнения")]
-        [DataMember]
+        [DataMember]    
         public DateTime? DateImplement { get; set; }
     }
 }

@@ -100,6 +100,27 @@ namespace IcecreamShopDatabaseImplement.Migrations
                     b.ToTable("IcecreamAdditives");
                 });
 
+            modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.Implementer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImplementerFIO")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PauseTime")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WorkingTime")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Implementers");
+                });
+
             modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -122,6 +143,9 @@ namespace IcecreamShopDatabaseImplement.Migrations
                     b.Property<int>("IcecreamId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("ImplementerId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -133,6 +157,8 @@ namespace IcecreamShopDatabaseImplement.Migrations
                     b.HasIndex("ClientId");
 
                     b.HasIndex("IcecreamId");
+
+                    b.HasIndex("ImplementerId");
 
                     b.ToTable("Orders");
                 });
@@ -155,7 +181,7 @@ namespace IcecreamShopDatabaseImplement.Migrations
             modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.Order", b =>
                 {
                     b.HasOne("IcecreamShopDatabaseImplement.Models.Client", "Client")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -165,6 +191,10 @@ namespace IcecreamShopDatabaseImplement.Migrations
                         .HasForeignKey("IcecreamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("IcecreamShopDatabaseImplement.Models.Implementer", "Implementer")
+                        .WithMany("Orders")
+                        .HasForeignKey("ImplementerId");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,6 +6,7 @@ using IcecreamShopBusinessLogic.BindingModels;
 using IcecreamShopBusinessLogic.Interfaces;
 using IcecreamShopBusinessLogic.ViewModels;
 using IcecreamShopFileImplement.Models;
+using IcecreamShopBusinessLogic.Enums;
 
 namespace IcecreamShopFileImplement.Implements
 {
@@ -36,6 +37,7 @@ namespace IcecreamShopFileImplement.Implements
             }
             element.IcecreamId = model.IcecreamId == 0 ? element.IcecreamId : model.IcecreamId;
             element.ClientId = model.ClientId == null ? element.ClientId : (int)model.ClientId;
+            element.ImplementerId = model.ImplementerId;
             element.Count = model.Count;
             element.Sum = model.Sum;
             element.Status = model.Status;
@@ -58,13 +60,18 @@ namespace IcecreamShopFileImplement.Implements
         public List<OrderViewModel> Read(OrderBindingModel model)
         {
             return source.Orders
-            .Where(rec => model == null || rec.Id == model.Id)
+            .Where(rec => model == null || rec.Id == model.Id || (model.DateFrom.HasValue && model.DateTo.HasValue && rec.DateCreate >= model.DateFrom && rec.DateCreate <= model.DateTo)
+            || (model.ClientId.HasValue && rec.ClientId == model.ClientId)
+            || model.FreeOrders.HasValue && model.FreeOrders.Value && !rec.ImplementerId.HasValue
+            || model.ImplementerId.HasValue && rec.ImplementerId == model.ImplementerId && rec.Status == OrderStatus.Выполняется)
             .Select(rec => new OrderViewModel
             {
                 Id = rec.Id,
                 IcecreamName = source.Icecreams.FirstOrDefault(x => x.Id == rec.IcecreamId)?.IcecreamName,
                 ClientId = rec.ClientId,
                 ClientFIO = source.Clients.FirstOrDefault(recC => recC.Id == rec.ClientId)?.ClientFIO,
+                ImplementerId = rec.ImplementerId,
+                ImplementerFIO = source.Implementers.FirstOrDefault(recC => recC.Id == rec.ImplementerId)?.ImplementerFIO,
                 Count = rec.Count,
                 Sum = rec.Sum,
                 Status = rec.Status,
