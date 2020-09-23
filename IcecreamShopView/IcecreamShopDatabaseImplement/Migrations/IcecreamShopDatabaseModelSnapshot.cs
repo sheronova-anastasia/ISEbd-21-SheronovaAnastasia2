@@ -15,7 +15,7 @@ namespace IcecreamShopDatabaseImplement.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.7")
+                .HasAnnotation("ProductVersion", "3.1.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -155,7 +155,7 @@ namespace IcecreamShopDatabaseImplement.Migrations
             modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.Order", b =>
                 {
                     b.HasOne("IcecreamShopDatabaseImplement.Models.Client", "Client")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
