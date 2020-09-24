@@ -33,6 +33,7 @@ namespace IcecreamShopRestApi
             services.AddTransient<IOrderLogic, OrderLogic>();
             services.AddTransient<IIcecreamLogic, IcecreamLogic>();
             services.AddTransient<MainLogic>();
+            services.AddTransient<IMessageInfoLogic, MessageInfoLogic>();
             services.AddControllers();
         }
 
