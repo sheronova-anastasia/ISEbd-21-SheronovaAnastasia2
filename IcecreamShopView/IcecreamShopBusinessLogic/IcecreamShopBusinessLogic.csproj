@@ -6,7 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.11.3" />
+    <PackageReference Include="MailKit" Version="2.9.0" />
     <PackageReference Include="PDFsharp-MigraDoc" Version="1.50.5147" />
+    <PackageReference Include="SecureSocket.NET" Version="0.2.3" />
+    <PackageReference Include="System.Net.Security" Version="4.3.2" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

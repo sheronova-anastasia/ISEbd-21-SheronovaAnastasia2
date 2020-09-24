@@ -7,14 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IcecreamShopBusinessLogic.Interfaces;
+using Unity;
 
 namespace IcecreamShopView
 {
     public partial class FormMessages : Form
     {
-        public FormMessages()
+        [Dependency]
+        public new IUnityContainer Container { get; set; }
+        private readonly IMessageInfoLogic logic;
+        public FormMessages(IMessageInfoLogic logic)
         {
+            this.logic = logic;
             InitializeComponent();
+        }
+        private void FormMessages_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void LoadData()
+        {
+            try
+            {
+                var list = logic.Read(null);
+                if (list != null)
+                {
+                    dataGridView.DataSource = list;
+                    dataGridView.Columns[0].Visible = false;
+                    dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
