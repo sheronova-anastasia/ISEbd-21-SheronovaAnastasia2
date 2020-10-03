@@ -13,6 +13,8 @@
     <Compile Remove="Migrations\20200922061101_NewMigration.Designer.cs" />
     <Compile Remove="Migrations\20200923171633_AnotherMigration.cs" />
     <Compile Remove="Migrations\20200923171633_AnotherMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200924084016_NewMigration.cs" />
+    <Compile Remove="Migrations\20200924084016_NewMigration.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
