@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using IcecreamShopBusinessLogic.Attributes;
 
 namespace IcecreamShopBusinessLogic.ViewModels
 {
-    public class AdditiveViewModel
+    public class AdditiveViewModel : BaseViewModel
     {
-        public int Id { get; set; }
-        [DisplayName("Название добавки")]
+        [Column(title: "Добавка", gridViewAutoSize: GridViewAutoSize.Fill)]
         public string AdditiveName { get; set; }
+        public override List<string> Properties() => new List<string>
+        {
+            "Id",
+            "AdditiveName"
+        };
     }
 }

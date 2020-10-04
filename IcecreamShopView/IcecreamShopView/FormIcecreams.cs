@@ -32,14 +32,7 @@ namespace IcecreamShopView
         {
             try
             {
-                var list = logic.Read(null);
-                if (list != null)
-                {
-                    dataGridViewIcecreams.DataSource = list;
-                    dataGridViewIcecreams.Columns[0].Visible = false;
-                    dataGridViewIcecreams.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridViewIcecreams.Columns[3].Visible = false;
-                }
+                Program.ConfigGrid(logic.Read(null), dataGridViewIcecreams);
             }
             catch (Exception ex)
             {

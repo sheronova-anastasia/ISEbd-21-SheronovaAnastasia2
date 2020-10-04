@@ -31,13 +31,7 @@ namespace IcecreamShopView
         {
             try
             {
-                var list = logic.Read(null);
-                if (list != null)
-                {
-                    dataGridViewAdditives.DataSource = list;
-                    dataGridViewAdditives.Columns[0].Visible = false;
-                    dataGridViewAdditives.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
+                Program.ConfigGrid(logic.Read(null), dataGridViewAdditives);
             }
             catch (Exception ex)
             {
