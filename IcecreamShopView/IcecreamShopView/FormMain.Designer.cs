@@ -39,6 +39,7 @@
             this.добавкиПоМороженомуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокДобавокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.клиентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьБэкапToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewMain = new System.Windows.Forms.DataGridView();
             this.сообщенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonCreateOrder = new System.Windows.Forms.Button();
@@ -53,7 +54,8 @@
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.справочникиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
-            this.запускРаботToolStripMenuItem});
+            this.запускРаботToolStripMenuItem,
+            this.создатьБэкапToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(819, 24);
@@ -188,6 +190,13 @@
             this.запускРаботToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.запускРаботToolStripMenuItem.Text = "Запуск работ";
             this.запускРаботToolStripMenuItem.Click += new System.EventHandler(this.запускРаботToolStripMenuItem_Click);
+            //
+            // создатьБэкапToolStripMenuItem
+            // 
+            this.создатьБэкапToolStripMenuItem.Name = "создатьБэкапToolStripMenuItem1";
+            this.создатьБэкапToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.создатьБэкапToolStripMenuItem.Text = "Создать Бэкап";
+            this.создатьБэкапToolStripMenuItem.Click += new System.EventHandler(this.создатьБэкапToolStripMenuItem_Click);
             // 
             // сообщенияToolStripMenuItem
             // 
@@ -236,5 +245,6 @@
         private System.Windows.Forms.ToolStripMenuItem исполнителиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem запускРаботToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сообщенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem создатьБэкапToolStripMenuItem;
     }
 }
