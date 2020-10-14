@@ -33,6 +33,18 @@ namespace IcecreamShopFileImplement.Implements
             }
             else
             {
+                throw new Exception("Такой исполнитель уже существует");
+            }
+            if (model.Id.HasValue)
+            {
+                element = source.Implementers.FirstOrDefault(rec => rec.Id == model.Id);
+                if (element == null)
+                {
+                    throw new Exception("Исполнитель не найден");
+                }
+            }
+            else
+            {
                 int maxId = source.Implementers.Count > 0 ? source.Implementers.Max(rec => rec.Id) : 0;
                 element = new Implementer { Id = maxId + 1 };
                 source.Implementers.Add(element);

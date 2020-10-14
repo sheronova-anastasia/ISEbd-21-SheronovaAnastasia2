@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IcecreamShopDatabaseImplement.Migrations
 {
     [DbContext(typeof(IcecreamShopDatabase))]
-    [Migration("20200923171633_AnotherMigration")]
-    partial class AnotherMigration
+    [Migration("20201014013143_MIGRATION")]
+    partial class MIGRATION
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.8")
+                .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -123,6 +123,33 @@ namespace IcecreamShopDatabaseImplement.Migrations
                     b.ToTable("Implementers");
                 });
 
+            modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.MessageInfo", b =>
+                {
+                    b.Property<string>("MessageId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateDelivery")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("SenderName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MessageId");
+
+                    b.HasIndex("ClientId");
+
+                    b.ToTable("MessageInfoes");
+                });
+
             modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -178,6 +205,13 @@ namespace IcecreamShopDatabaseImplement.Migrations
                         .HasForeignKey("IcecreamId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.MessageInfo", b =>
+                {
+                    b.HasOne("IcecreamShopDatabaseImplement.Models.Client", "Client")
+                        .WithMany("MessageInfoes")
+                        .HasForeignKey("ClientId");
                 });
 
             modelBuilder.Entity("IcecreamShopDatabaseImplement.Models.Order", b =>
